@@ -19,3 +19,4 @@ public class MainActivity extends AppCompatActivity {
 //김희목
 //고동현
 //...
+//고동현 git test
