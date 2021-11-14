@@ -1,4 +1,7 @@
-package com.example.helloandroid;
+//작성자: 김선호
+//작성일자 : 21-11-13
+//코드 목적 : 소환사 기본 정보 파싱을 위한 데이터셋
+package com.example.helloandroid.Parser;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

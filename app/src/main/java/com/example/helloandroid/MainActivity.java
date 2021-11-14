@@ -1,3 +1,4 @@
+
 package com.example.helloandroid;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,15 +20,6 @@ public class MainActivity extends AppCompatActivity {
         riotAPIClass.setSummonerName("전자화폐");
         riotAPIClass.start();
         tt.start();
-        System.out.println("test : " + DataHandelObject.summonerId);
 
     }
 }
-
-//김선호
-//이종영
-//최백균
-//김희목
-//고동현
-//...
-//고동현 git test
