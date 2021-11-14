@@ -13,13 +13,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView tx = (TextView) findViewById(R.id.textView);
-        RiotAPIClass riotAPIClass = new RiotAPIClass();
-        ThreadTest tt = new ThreadTest();
-        riotAPIClass.setSummonerName("전자화폐");
-        riotAPIClass.start();
-        tt.start();
-        System.out.println("test : " + DataHandelObject.summonerId);
+//        TextView tx = (TextView) findViewById(R.id.textView);
+//        RiotAPIClass riotAPIClass = new RiotAPIClass();
+//        ThreadTest tt = new ThreadTest();
+//        riotAPIClass.setSummonerName("전자화폐");
+//        riotAPIClass.start();
+//        tt.start();
+//        System.out.println("test : " + DataHandelObject.summonerId);
 
     }
 }
