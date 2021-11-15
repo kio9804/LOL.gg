@@ -5,12 +5,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.widget.TextView;
 
-import java.io.IOException;
+import com.example.helloandroid.Parser.LeagueInfo;
+import com.example.helloandroid.Parser.SummonerId;
+
 import java.util.List;
 
 public class RiotAPIClass extends Thread{
@@ -27,15 +25,14 @@ public class RiotAPIClass extends Thread{
             @Override
             public void onResponse(Call<SummonerId> call, Response<SummonerId> response) {
                 if (response.isSuccessful()) {
-                    SummonerId summonerId = response.body();
-                    DataHandelObject.summonerId = new String(summonerId.getId());
-                    System.out.println("id : " + DataHandelObject.summonerId);
+                   DataHandelObject.summonerIds = response.body();
 
-                    retrofitAPI.getLeagueInfo(summonerId.getId(),MainActivity.apiKey).enqueue(new Callback<List<LeagueInfo>>() {
+                    retrofitAPI.getLeagueInfo(DataHandelObject.summonerIds.getId(),MainActivity.apiKey).enqueue(new Callback<List<LeagueInfo>>() {
                         @Override
                         public void onResponse(Call<List<LeagueInfo>> call, Response<List<LeagueInfo>> response) {
                             if (response.isSuccessful()) {
                                 leagueInfo = response.body();
+                                DataHandelObject.leagueInfos = leagueInfo;
                             }
                         }
 
