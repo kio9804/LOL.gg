@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         ThreadTest tt = new ThreadTest();
         riotAPIClass.setSummonerName("전자화폐");
         riotAPIClass.start();
-        tt.start();
-
+        tt.start
     }
 }
