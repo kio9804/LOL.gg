@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.helloandroid.R;
+
+import org.w3c.dom.Text;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +64,60 @@ public class PredictionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_prediction, container, false);
+        View inflateView = inflater.inflate(R.layout.fragment_prediction, container, false);
+
+        PredictionViewHolder viewHolder = new PredictionViewHolder(inflateView);
+
+        viewHolder.bindData(
+                new String[]{"승률 50%", "승률 50%", "승률 50%", "승률 50%", "승률 50%"},
+                new String[]{"승률 10%", "승률 10%", "승률 10%", "승률 10%", "승률 10%"},
+                "레드 팀이 이길 확률 50%"
+        );
+        return inflateView;
+    }
+
+    private static class PredictionViewHolder {
+        private TextView red1TextView;
+        private TextView red2TextView;
+        private TextView red3TextView;
+        private TextView red4TextView;
+        private TextView red5TextView;
+        private TextView blue1TextView;
+        private TextView blue2TextView;
+        private TextView blue3TextView;
+        private TextView blue4TextView;
+        private TextView blue5TextView;
+        private TextView resultTextView;
+        private PredictionViewHolder(View inflateView) {
+            red1TextView = inflateView.findViewById(R.id.prediction_red1_text);
+            red2TextView = inflateView.findViewById(R.id.prediction_red2_text);
+            red3TextView = inflateView.findViewById(R.id.prediction_red3_text);
+            red4TextView = inflateView.findViewById(R.id.prediction_red4_text);
+            red5TextView = inflateView.findViewById(R.id.prediction_red5_text);
+
+            blue1TextView = inflateView.findViewById(R.id.prediction_blue1_text);
+            blue2TextView = inflateView.findViewById(R.id.prediction_blue2_text);
+            blue3TextView = inflateView.findViewById(R.id.prediction_blue3_text);
+            blue4TextView = inflateView.findViewById(R.id.prediction_blue4_text);
+            blue5TextView = inflateView.findViewById(R.id.prediction_blue5_text);
+
+            resultTextView = inflateView.findViewById(R.id.prediction_result_text);
+        }
+
+        private void bindData(String[] red, String[] blue, String predictionResult) {
+            red1TextView.setText(red[0]);
+            red2TextView.setText(red[1]);
+            red3TextView.setText(red[2]);
+            red4TextView.setText(red[3]);
+            red5TextView.setText(red[4]);
+
+            blue1TextView.setText(blue[0]);
+            blue2TextView.setText(blue[1]);
+            blue3TextView.setText(blue[2]);
+            blue4TextView.setText(blue[3]);
+            blue5TextView.setText(blue[4]);
+
+            resultTextView.setText(predictionResult);
+        }
     }
 }

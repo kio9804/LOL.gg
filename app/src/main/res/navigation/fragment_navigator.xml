@@ -73,10 +73,18 @@
         <action
             android:id="@+id/action_searchFragment_to_predictionFragment"
             app:destination="@id/predictionFragment" />
+        <action
+            android:id="@+id/action_searchFragment_to_inGameFragment"
+            app:destination="@id/inGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/predictionFragment"
         android:name="com.example.helloandroid.prediction.PredictionFragment"
         android:label="fragment_prediction"
         tools:layout="@layout/fragment_prediction" />
+    <fragment
+        android:id="@+id/inGameFragment"
+        android:name="com.example.helloandroid.inGame.InGameFragment"
+        android:label="fragment_in_game"
+        tools:layout="@layout/fragment_in_game" />
 </navigation>

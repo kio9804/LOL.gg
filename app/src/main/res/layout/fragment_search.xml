@@ -6,40 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".search.SearchFragment">
 
-
-    <Button
-        android:id="@+id/transform_button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="199dp"
-        android:layout_marginBottom="158dp"
-        android:text="전적갱신"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/prediction_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="19dp"
-        android:text="승리예측"
-        app:layout_constraintBottom_toTopOf="@+id/solo_rank_button"
-        app:layout_constraintEnd_toStartOf="@+id/ingame_button" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/ingame_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="77dp"
-        android:layout_marginRight="77dp"
-        android:text="인게임"
-        app:layout_constraintBaseline_toBaselineOf="@+id/prediction_button"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <Button
+                android:id="@+id/transform_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="전적갱신" />
+
+            <Button
+                android:id="@+id/prediction_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_margin="10dp"
+                android:text="승리예측" />
+
+            <Button
+                android:id="@+id/ingame_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="인게임" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/solo_rank_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="솔로랭크" />
+
+            <Button
+                android:id="@+id/free_rank_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="자유랭크" />
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <ImageView
         android:id="@+id/usericon_imageView"
@@ -123,38 +152,28 @@
         app:layout_constraintStart_toEndOf="@+id/rankicon_imageView"
         app:layout_constraintTop_toBottomOf="@+id/ranktype_textview" />
 
-    <Button
-        android:id="@+id/solo_rank_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="266dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:text="솔로랭크"
-        app:layout_constraintEnd_toEndOf="@+id/prediction_button"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/free_rank_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="33dp"
-        android:layout_marginRight="33dp"
-        android:text="자유랭크"
-        app:layout_constraintEnd_toEndOf="@+id/ingame_button"
-        app:layout_constraintTop_toBottomOf="@+id/ingame_button" />
+    <View
+        android:id="@+id/view2"
+        android:layout_width="408dp"
+        android:layout_height="6dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rankicon_imageView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/searchRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="236dp"
-        android:layout_marginBottom="64dp"
+        android:layout_height="350dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
 
     </androidx.recyclerview.widget.RecyclerView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
