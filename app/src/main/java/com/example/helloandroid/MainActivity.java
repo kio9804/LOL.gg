@@ -14,11 +14,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView tx = (TextView) findViewById(R.id.textView);
         RiotAPIClass riotAPIClass = new RiotAPIClass();
         ThreadTest tt = new ThreadTest();
-        riotAPIClass.setSummonerName("전자화폐");
+        riotAPIClass.setSummonerName("전자화폐"); //전적갱신 예시
         riotAPIClass.start();
-        tt.start
+        ThreadTest th1 = new ThreadTest(); //UI예시
+        th1.start();
     }
 }
