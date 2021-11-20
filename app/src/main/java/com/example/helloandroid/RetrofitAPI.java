@@ -1,7 +1,12 @@
+//작성자: 김선호
+//작성일자 : 21-11-13
+//인터페이스 목적 : RetrofitAPI를 이용하여 RiotAPI를 호출하기 위한 인터페이스
+
 package com.example.helloandroid;
 
 import com.example.helloandroid.Parser.LeagueInfo;
 import com.example.helloandroid.Parser.MatchInfo;
+import com.example.helloandroid.Parser.Spector;
 import com.example.helloandroid.Parser.SummonerId;
 
 import java.util.List;
@@ -31,12 +36,17 @@ public interface RetrofitAPI {
             @Query("api_key") String api_key
     );
 
+
     @GET("/lol/match/v5/matches/{matchId}")
     Call<MatchInfo> getMatchInfo(
             @Path("matchId") String matchId,
             @Query("api_key") String api_key
     );
 
-
+    @GET("/lol/spectator/v4/active-games/by-summoner/{encryptedSummonerId}")
+    Call<Spector> getSpector(
+            @Path("encryptedSummonerId") String encryptedSummonerId,
+            @Query("api_key") String api_key
+    );
 
 }
