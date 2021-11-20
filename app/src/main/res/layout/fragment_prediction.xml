@@ -1,14 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".prediction.PredictionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/logo" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_text" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TableRow
+            android:gravity="center">
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_header"
+                android:text="블루팀 %"
+                android:textSize="35sp" />
+
+            <TextView
+                android:gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_header"
+                android:text="레드팀 %"
+                android:textSize="35sp" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:id="@+id/prediction_blue1_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/prediction_red1_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:id="@+id/prediction_blue2_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/prediction_red2_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:id="@+id/prediction_blue3_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/prediction_red3_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:id="@+id/prediction_blue4_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/prediction_red4_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+        </TableRow>
+
+        <TableRow android:gravity="center">
+
+            <TextView
+                android:id="@+id/prediction_blue5_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/prediction_red5_text"
+                android:layout_width="200dp"
+                android:layout_height="70dp"
+                android:background="@drawable/table_border"
+                android:textSize="20sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/prediction_result_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+</LinearLayout>

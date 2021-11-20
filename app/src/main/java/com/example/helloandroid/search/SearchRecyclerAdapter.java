@@ -55,6 +55,21 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
                 .into(holder.item5ImageView);
         Glide.with(holder.item6ImageView.getContext()).load(searchItemObject.getItem()[5])
                 .into(holder.item6ImageView);
+
+        // 스펠 이미지 불러오는 코드
+        Glide.with(holder.spellImageView.getContext()).load(searchItemObject.getSpell()[0])
+                .into(holder.spellImageView);
+        Glide.with(holder.spell2ImageView.getContext()).load(searchItemObject.getSpell()[1])
+                .into(holder.spell2ImageView);
+        // 룬 이미지 불러오는 코드
+        Glide.with(holder.runesImageView.getContext()).load(searchItemObject.getRunes()[0])
+                .into(holder.runesImageView);
+        Glide.with(holder.runes2ImageView.getContext()).load(searchItemObject.getRunes()[1])
+                .into(holder.runes2ImageView);
+
+        // 장신구
+        Glide.with(holder.totemImageView.getContext()).load(searchItemObject.getTotem())
+                .into(holder.totemImageView);
     }
 
     @Override
