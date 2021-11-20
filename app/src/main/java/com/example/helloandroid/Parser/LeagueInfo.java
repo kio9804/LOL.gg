@@ -1,6 +1,7 @@
 //작성자: 김선호
 //작성일자 : 21-11-13
-//코드 목적 : 소환사 개인 성적 파싱을 위한 데이터셋
+//클래스 목적 : 소환사 개인 성적 파싱을 위한 데이터셋
+
 package com.example.helloandroid.Parser;
 
 import com.google.gson.annotations.Expose;

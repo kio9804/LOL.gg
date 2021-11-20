@@ -1,4 +1,10 @@
+//작성자: 김선호
+//작성일자 : 21-11-13
+//클래스 목적 : 미리 작성한 인터페이스를 호출하여 RiotAPI를 활용하여 사용자
+
 package com.example.helloandroid;
+
+import android.provider.ContactsContract;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -8,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import com.example.helloandroid.Parser.LeagueInfo;
 import com.example.helloandroid.Parser.MatchInfo;
+import com.example.helloandroid.Parser.Spector;
 import com.example.helloandroid.Parser.SummonerId;
 
 import java.util.List;
@@ -39,6 +46,9 @@ public class RiotAPIClass extends Thread{
                             if (response.isSuccessful()) {
                                 leagueInfo = response.body();
                                 DataHandlerObject.leagueInfos = leagueInfo;
+                                System.out.println("In Func : " + DataHandlerObject.summonerIds.getId());
+                                findSpectorInfo(DataHandlerObject.summonerIds.getId());
+                                System.out.println("Worked");
                             }
                         }
 
@@ -96,6 +106,30 @@ public class RiotAPIClass extends Thread{
             }
             @Override
             public void onFailure(Call<MatchInfo> call, Throwable t) {
+
+            }
+        });
+    }
+
+    protected void findSpectorInfo(String id){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://kr.api.riotgames.com")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        RetrofitAPI retrofitAPI = retrofit.create(RetrofitAPI.class);
+        retrofitAPI.getSpector(id,MainActivity.apiKey).enqueue(new Callback<Spector>() {
+            @Override
+            public void onResponse(Call<Spector> call, Response<Spector> response) {
+                System.out.println(response.code());
+                if(response.isSuccessful()){
+                    DataHandlerObject.spector = response.body();
+                    System.out.println("Worked2");
+                    //System.out.println(DataHandlerObject.spector.getParticipants().get(1).getSummonerName());
+                }
+            }
+            @Override
+            public void onFailure(Call<Spector> call, Throwable t) {
+                System.out.println(t);
 
             }
         });
