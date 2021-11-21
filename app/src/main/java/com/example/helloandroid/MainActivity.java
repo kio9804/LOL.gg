@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         RiotAPIClass riotAPIClass = new RiotAPIClass();
         ThreadTest tt = new ThreadTest();
-        riotAPIClass.setSummonerName("이아카"); //전적갱신 예시
+        riotAPIClass.setSummonerName("클린아이디"); //전적갱신 예시
         riotAPIClass.start();
         ThreadTest th1 = new ThreadTest(); //UI예시
         th1.start();
