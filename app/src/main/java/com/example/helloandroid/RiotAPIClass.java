@@ -46,9 +46,7 @@ public class RiotAPIClass extends Thread{
                             if (response.isSuccessful()) {
                                 leagueInfo = response.body();
                                 DataHandlerObject.leagueInfos = leagueInfo;
-                                System.out.println("In Func : " + DataHandlerObject.summonerIds.getId());
                                 findSpectorInfo(DataHandlerObject.summonerIds.getId());
-                                System.out.println("Worked");
                             }
                         }
 
@@ -123,8 +121,6 @@ public class RiotAPIClass extends Thread{
                 System.out.println(response.code());
                 if(response.isSuccessful()){
                     DataHandlerObject.spector = response.body();
-                    System.out.println("Worked2");
-                    //System.out.println(DataHandlerObject.spector.getParticipants().get(1).getSummonerName());
                 }
             }
             @Override

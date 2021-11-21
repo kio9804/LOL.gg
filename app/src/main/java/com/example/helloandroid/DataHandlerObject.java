@@ -19,6 +19,6 @@ public class DataHandlerObject {
     static SummonerId summonerIds; //소환사 정보
     static List<String> matchLists; //매치 리스트
     static MatchInfo matchInfos; //매치 정보
-    static Spector spector;
+    static Spector spector; //현재 진행중인 게임 정보
 
 }
