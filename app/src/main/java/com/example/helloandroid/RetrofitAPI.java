@@ -1,6 +1,7 @@
 package com.example.helloandroid;
 
 import com.example.helloandroid.Parser.LeagueInfo;
+import com.example.helloandroid.Parser.MatchInfo;
 import com.example.helloandroid.Parser.SummonerId;
 
 import java.util.List;
@@ -21,4 +22,21 @@ public interface RetrofitAPI {
             @Path("encryptedSummonerId") String encryptedSummonerId,
             @Query("api_key") String api_key
     );
+
+    @GET("/lol/match/v5/matches/by-puuid/{puuid}/ids")
+    Call<List<String>> getList(
+            @Path("puuid") String puuidStr,
+            @Query("start") int startNum,
+            @Query("count") int countNUm,
+            @Query("api_key") String api_key
+    );
+
+    @GET("/lol/match/v5/matches/{matchId}")
+    Call<MatchInfo> getMatchInfo(
+            @Path("matchId") String matchId,
+            @Query("api_key") String api_key
+    );
+
+
+
 }
