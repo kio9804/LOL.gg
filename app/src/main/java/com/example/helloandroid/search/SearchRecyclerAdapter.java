@@ -1,11 +1,12 @@
 package com.example.helloandroid.search;
 
 import android.content.Context;
-import android.text.Layout;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,18 +15,38 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.helloandroid.R;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAdapter.SearchRecyclerViewHolder>{
+/**
+ * 검색화면의 RecyclerView를 구성하는 Adapter
+ *
+ * @author 고동현
+ * @since 2021-11-20
+ */
+public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAdapter.SearchRecyclerViewHolder> {
+    /**
+     * 검색 화면 구성하는데 필요한 DataObject List
+     */
     private List<SearchItemObject> itemObjectList;
 
+    /**
+     * 검색 화면 구성하는데 필요한 DataObject List를 Set한다.
+     * notifyDataSetChanged()를 호출하여 RecyclerView를 다시 구성한다.
+     *
+     * @param itemObjectList itemObjectList
+     */
     public void setItemObjectList(List<SearchItemObject> itemObjectList) {
         this.itemObjectList = itemObjectList;
         notifyDataSetChanged();
     }
 
+    /**
+     * ViewHolder 구성 시 호출
+     *
+     * @param parent   parent View
+     * @param viewType
+     * @return ViewHolder
+     */
     @NonNull
     @Override
     public SearchRecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,11 +56,28 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
         return new SearchRecyclerViewHolder(view);
     }
 
+    /**
+     * ViewHolder Binding시 호출
+     *
+     * @param holder   ViewHolder
+     * @param position 위치
+     */
     @Override
     public void onBindViewHolder(@NonNull SearchRecyclerViewHolder holder, int position) {
         SearchItemObject searchItemObject = itemObjectList.get(position);
         holder.kdaTextView.setText(searchItemObject.getKda());
-        holder.winTextView.setText(searchItemObject.getWin());
+        String winText;
+        String color;
+
+        if (searchItemObject.isWin()) {
+            winText = "승";
+            color = "#b2ebf4";
+        } else {
+            winText = "패";
+            color = "#ff9595";
+        }
+        holder.winTextView.setText(winText);
+        holder.containerLayout.setBackgroundColor(Color.parseColor(color));
         holder.gameTimeTextView.setText(searchItemObject.getGameTime());
         Glide.with(holder.championImageView.getContext()).load(searchItemObject.getChampion())
                 .into(holder.championImageView);
@@ -72,29 +110,93 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchRecyclerAd
                 .into(holder.totemImageView);
     }
 
+    /**
+     * 전체 DataObject List 크기 return
+     *
+     * @return 전체 DataObject List 크기
+     */
     @Override
     public int getItemCount() {
         return itemObjectList.size();
     }
 
-    static class SearchRecyclerViewHolder extends RecyclerView.ViewHolder{
+    /**
+     * 검색 RecyclerViewHolder를 구성
+     */
+    static class SearchRecyclerViewHolder extends RecyclerView.ViewHolder {
+        /**
+         * 전체 아이템 상위 컨테이너
+         */
+        private LinearLayout containerLayout;
+        /**
+         * 승률 Text
+         */
         private TextView winTextView;
+        /**
+         * 게임 시간
+         */
         private TextView gameTimeTextView;
+        /**
+         * kda
+         */
         private TextView kdaTextView;
+        /**
+         * 챔피언 이미지
+         */
         private ImageView championImageView;
+        /**
+         * 스펠 이미지
+         */
         private ImageView spellImageView;
+        /**
+         * 스펠 이미지
+         */
         private ImageView spell2ImageView;
+        /**
+         * 룬 이미지
+         */
         private ImageView runesImageView;
+        /**
+         * 룬 이미지
+         */
         private ImageView runes2ImageView;
+        /**
+         * 아이텤 이미지
+         */
         private ImageView itemImageView;
+        /**
+         * 아이텤 이미지
+         */
         private ImageView item2ImageView;
+        /**
+         * 아이텤 이미지
+         */
         private ImageView item3ImageView;
+        /**
+         * 아이텤 이미지
+         */
         private ImageView item4ImageView;
+        /**
+         * 아이텤 이미지
+         */
         private ImageView item5ImageView;
+        /**
+         * 아이텤 이미지
+         */
         private ImageView item6ImageView;
+        /**
+         * 장신구 이미지
+         */
         private ImageView totemImageView;
+
+        /**
+         * 생성자로서 View를 바인딩한다.
+         *
+         * @param itemView inflatedView
+         */
         public SearchRecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
+            containerLayout = itemView.findViewById(R.id.search_item_linear_layout);
             championImageView = itemView.findViewById(R.id.championImageView);
             winTextView = itemView.findViewById(R.id.win_textView);
             gameTimeTextView = itemView.findViewById(R.id.gametime_textView);

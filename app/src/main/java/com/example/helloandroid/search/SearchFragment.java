@@ -21,50 +21,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link SearchFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * 전적 화면 구성 Fragment
+ *
+ * @author 고동현
+ * @since 2021-11-20
  */
 public class SearchFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
     public SearchFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SearchFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SearchFragment newInstance(String param1, String param2) {
-        SearchFragment fragment = new SearchFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -86,7 +51,7 @@ public class SearchFragment extends Fragment {
         List<SearchItemObject> searchItemObjectList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
             searchItemObjectList.add(new SearchItemObject() {{
-                setWin("승");
+                setWin(true);
                 setKda("15/5/15");
                 setGameTime("30:00");
                 setChampion("https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/Shyvana.png");
@@ -108,7 +73,7 @@ public class SearchFragment extends Fragment {
 
             }});
             searchItemObjectList.add(new SearchItemObject() {{
-                setWin("패");
+                setWin(false);
                 setKda("5/5/5");
                 setGameTime("30:00");
                 setChampion("https://ddragon.leagueoflegends.com/cdn/10.6.1/img/champion/Shyvana.png");
@@ -127,7 +92,7 @@ public class SearchFragment extends Fragment {
         searchRecyclerView.addItemDecoration(dividerItemDecoration);
         recyclerAdapter.setItemObjectList(searchItemObjectList);
 
-        Button predictionButton = inflateView.findViewById(R.id.prediction_button);// 승리 예측 버튼
+        android.widget.Button predictionButton = inflateView.findViewById(R.id.prediction_button);// 승리 예측 버튼
         predictionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -135,7 +100,7 @@ public class SearchFragment extends Fragment {
             }
         });
 
-        Button inGameButton = inflateView.findViewById(R.id.ingame_button); // 인게임 버튼
+        android.widget.Button inGameButton = inflateView.findViewById(R.id.ingame_button); // 인게임 버튼
         inGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

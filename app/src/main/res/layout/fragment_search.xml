@@ -23,27 +23,30 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/transform_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="#4444ff"
                 android:text="전적갱신" />
 
-            <Button
-                android:id="@+id/prediction_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_margin="10dp"
-                android:text="승리예측" />
-
-            <Button
+            <android.widget.Button
                 android:id="@+id/ingame_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:textColor="#4444ff"
                 android:text="인게임" />
+
+            <android.widget.Button
+                android:id="@+id/prediction_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textColor="#4444ff"
+                android:text="승리예측" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -52,14 +55,14 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/solo_rank_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="솔로랭크" />
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/free_rank_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
