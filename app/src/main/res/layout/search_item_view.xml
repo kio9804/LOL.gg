@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/search_item_linear_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,27 +9,43 @@
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_marginStart="10dp">
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp">
 
         <TextView
             android:id="@+id/win_textView"
-            android:layout_width="26dp"
-            android:layout_height="17dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:textSize="20sp"
+            android:layout_gravity="center"
             android:text="승" />
 
         <TextView
             android:id="@+id/gametime_textView"
-            android:layout_width="24dp"
-            android:layout_height="19dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             android:text="10:10"
-            android:textSize="9sp"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:gravity="center"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="46dp" />
+        <TextView
+            android:id="@+id/kda_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="10/10/10"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="100dp"
+            tools:layout_editor_absoluteY="30dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -45,131 +62,113 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <ImageView
-                    android:layout_weight="2"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:id="@+id/championImageView"/>
+                    android:id="@+id/championImageView"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5" />
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-                    <ImageView
-                        android:id="@+id/spell_imageView"
-                        android:layout_width="15dp"
-                        android:layout_height="13dp"
-                        tools:srcCompat="@tools:sample/avatars" />
-                    <ImageView
-                        android:id="@+id/spell2_imageView"
-                        android:layout_width="15dp"
-                        android:layout_height="13dp"
-                        tools:layout_editor_absoluteX="126dp"
-                        tools:layout_editor_absoluteY="52dp"
-                        tools:srcCompat="@tools:sample/avatars" />
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/spell_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+                        <ImageView
+                            android:id="@+id/spell2_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="126dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+                        <ImageView
+                            android:id="@+id/item_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="51dp"
+                            tools:layout_editor_absoluteY="4dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <ImageView
+                            android:id="@+id/item2_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="51dp"
+                            tools:layout_editor_absoluteY="34dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <ImageView
+                            android:id="@+id/item3_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="51dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:id="@+id/runes_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="141dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <ImageView
+                            android:id="@+id/runes2_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="66dp"
+                            tools:layout_editor_absoluteY="34dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+                        <ImageView
+                            android:id="@+id/item4_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="66dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <ImageView
+                            android:id="@+id/item5_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="81dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <ImageView
+                            android:id="@+id/item6_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="96dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                        <ImageView
+                            android:id="@+id/totem_imageView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            tools:layout_editor_absoluteX="111dp"
+                            tools:layout_editor_absoluteY="52dp"
+                            tools:srcCompat="@tools:sample/avatars" />
+
+                    </LinearLayout>
                 </LinearLayout>
-
             </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <ImageView
-                    android:id="@+id/runes_imageView"
-                    android:layout_width="15dp"
-                    android:layout_height="13dp"
-                    tools:layout_editor_absoluteX="141dp"
-                    tools:layout_editor_absoluteY="52dp"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <ImageView
-                    android:id="@+id/runes2_imageView"
-                    android:layout_width="15dp"
-                    android:layout_height="13dp"
-                    tools:layout_editor_absoluteX="66dp"
-                    tools:layout_editor_absoluteY="34dp"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-                <TextView
-                    android:id="@+id/kda_textView"
-                    android:layout_width="48dp"
-                    android:layout_height="13dp"
-                    android:text="10/10/10"
-                    android:textSize="10sp"
-                    tools:layout_editor_absoluteX="100dp"
-                    tools:layout_editor_absoluteY="30dp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <ImageView
-                android:id="@+id/item_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="4dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/item2_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="34dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/item3_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="51dp"
-                tools:layout_editor_absoluteY="52dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/item4_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="66dp"
-                tools:layout_editor_absoluteY="52dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/item5_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="81dp"
-                tools:layout_editor_absoluteY="52dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/item6_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="96dp"
-                tools:layout_editor_absoluteY="52dp"
-                tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/totem_imageView"
-                android:layout_width="15dp"
-                android:layout_height="13dp"
-                tools:layout_editor_absoluteX="111dp"
-                tools:layout_editor_absoluteY="52dp"
-                tools:srcCompat="@tools:sample/avatars" />
         </LinearLayout>
     </LinearLayout>
-
-
-
-
-
-
-
 </LinearLayout>

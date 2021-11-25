@@ -1,12 +1,20 @@
 package com.example.helloandroid.search;
 
+import androidx.annotation.NonNull;
+
 import java.util.Arrays;
 
+/**
+ * 검색 화면을 구성하는데 필요한 DataObject
+ *
+ * @author 고동현
+ * @since 2021-11-20
+ */
 public class SearchItemObject {
     /**
-     * 승패 여부 단순 텍스트
+     * 승패 여부
      */
-    private String win;
+    private boolean win;
     /**
      * 챔피언 URL 필요함
      */
@@ -37,12 +45,12 @@ public class SearchItemObject {
      */
     private String totem;
 
-    public String getWin() {
-        return win;
+    public void setWin(boolean win) {
+        this.win = win;
     }
 
-    public void setWin(String win) {
-        this.win = win;
+    public boolean isWin() {
+        return win;
     }
 
     public String getGameTime() {
@@ -101,6 +109,7 @@ public class SearchItemObject {
         return champion;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "SearchItemObject{" +
