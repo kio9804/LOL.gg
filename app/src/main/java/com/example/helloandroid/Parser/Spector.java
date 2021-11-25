@@ -50,4 +50,28 @@ public class Spector {
     public void setGameId(String gameId) {
         this.gameId = gameId;
     }
+
+    public String getgameMode() {
+        return gameMode;
+    }
+
+    public void setgameMode(String gameMode) {
+        this.gameMode = gameMode;
+    }
+
+    public String getgameType() {
+        return gameType;
+    }
+
+    public void setgameType(String gameType) {
+        this.gameType = gameType;
+    }
+
+    public String getgameLength() {
+        return gameLength;
+    }
+
+    public void setgameLength(String gameLength) {
+        this.gameLength = gameLength;
+    }
 }

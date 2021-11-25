@@ -12,7 +12,9 @@
 
 package com.example.helloandroid;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.os.Bundle;
 import android.widget.TextView;
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         RiotAPIClass riotAPIClass = new RiotAPIClass();
         ThreadTest tt = new ThreadTest();
-        riotAPIClass.setSummonerName("클린아이디"); //전적갱신 예시
+        riotAPIClass.setSummonerName("모든사람은소중해"); //전적갱신 예시
         riotAPIClass.start();
         ThreadTest th1 = new ThreadTest(); //UI예시
         th1.start();
